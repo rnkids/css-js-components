@@ -1,0 +1,23 @@
+{
+  "name": "css-js-components",
+  "version": "0.0.4",
+  "description": "react, react-native components styled by css prop",
+  "dependencies": {
+    "html-tags": "^3.0.0",
+    "styled-components": "^5.0.0-beta.8"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "css-js-components",
+    "styled-components"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sanglequyvn/css-js-components"
+  },
+  "author": "Le Quy Sang",
+  "license": "MIT"
+}
