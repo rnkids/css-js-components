@@ -1,10 +1,11 @@
 {
   "name": "css-js-components",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "react, react-native components styled by css prop",
   "dependencies": {
     "html-tags": "^3.0.0",
-    "styled-components": "^5.0.0-beta.8"
+    "styled-components": "^5.0.0-beta.8",
+    "react-native-web": "^0.11.5"
   },
   "main": "index.js",
   "scripts": {

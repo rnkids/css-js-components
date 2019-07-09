@@ -2,9 +2,7 @@
  react, react-native styled by css prop
 ## Usage
 
-```
-$ npm i -S css-js-components styled-components html-tags
-```
+
 ```jsx
 //IMPORT
 //react
