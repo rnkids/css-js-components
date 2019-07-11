@@ -20,8 +20,8 @@ const App = () => {
   return (
     <View css={{
       flex: 1,
-      jCont: "center",
-      aItems: "center",
+      jC: "center",
+      alignItems: "center",
       bg: "black"
     }}>
       <Button css={{
@@ -30,8 +30,8 @@ const App = () => {
         bg: "darkgreen",
         size: 80,
         border: "1px solid black",
-        bdRa: 50,
-        pos: "absolute",
+        bR: 50,
+        position: "absolute",
         right: 30,
         bottom: 30,
       }}
@@ -49,8 +49,10 @@ export default App;
 
 ```
 ## CSS alias
+The right key alias the left css
+
 ```jsx
-const alias = {
+
   //fonts - text
   fontFamily: font, 
   lineHeight: lineH, 
@@ -94,7 +96,7 @@ const alias = {
   //layout
   verticalAlign: vAlign,
   width, height: size,
-}
+
 ```
 
 Created by Le Quy Sang
