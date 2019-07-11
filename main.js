@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import tags from 'html-tags'
 import * as N from 'react-native'
 
-const Box = styled('div')(({ css }) => transformCss(css));
+const Box = styled('div')(({ css }) => _css(css));
 
 tags.forEach(tag => {
     module.exports[tag.charAt(0).toUpperCase() + tag.slice(1)] = props => <Box as={tag} {...props} />
@@ -45,41 +45,15 @@ export const useValue = () => {
     return value;
 };
 
-//CSS
-const initCss = {
+export const _css = ({
     //fonts
-    // font, lineH, letS, 
-    textAlign: "center",
-    //colors
-    // bg: "white",
-    //background
-    // bgImg, bgSize, bgPos, bgRep,
-    //flexbox
-    // aCont, jItems, 
-    alignItems: "center",
-    jC: "center",
-    // flexWr, flexDir, flexGr, flexSh, flexBs, jSelf, aSelf,
-    //grid
-    // gridCg, gridRg, gridAf, gridAc, gridAr, gridTc, gridTr, gridTa,
-    //space
-    // m, mt, mr, mb, ml, mx, my, p, pt, pr, pb, pl, px, py,
-    //layout
-    // vAlign, size, width, height,
-    //borders
-    // bdT, bdR, bdL, bdB, bdColor, bdWidth, bdStyle, bdRadius,
-    //shadow
-    // boxSh, textSh, ...props
-}
-
-const transformCss = ({
-    //fonts
-    font, lineH, letS, textAlign = initCss.textAlign,
+    font, lineH, letS,
     //colors
     bg,
     //background
     bgImg, bgSize, bgPos, bgRep,
     //flexbox
-    alignItems = initCss.alignItems, jI, jC = initCss.jC, fD, jS,
+    jI, jC, fD, jS,
     //grid
     gridCg, gridRg, gridAf, gridAc, gridAr, gridTc, gridTr, gridTa,
     //space
@@ -92,13 +66,12 @@ const transformCss = ({
     ...props
 }) => ({
     //fonts - text
-    fontFamily: font, lineHeight: lineH, letterSpacing: letS, textAlign: textAlign,
+    fontFamily: font, lineHeight: lineH, letterSpacing: letS,
     //colors
     backgroundColor: bg,
     //background
     backgroundImage: bgImg, backgroundSize: bgSize, backgroundPosition: bgPos, backgroundRepeat: bgRep,
     //flexbox
-    alignItems: alignItems,
     justifyItems: jI,
     justifyContent: jC,
     flexDirection: fD,
@@ -111,10 +84,9 @@ const transformCss = ({
     padding: p, paddingTop: pt, paddingRight: pr, paddingBottom: pb, paddingLeft: pl, paddingX: px, paddingY: py,
     //layout
     verticalAlign: vAlign,
-    width: size ? size : width,
-    height: size ? size : height,
     //border
     borderRadius: bR,
+    ...(size ? { width: size, height: size } : null),
     //position
     ...props
 })

@@ -1,6 +1,6 @@
 {
   "name": "css-js-components",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "react, react-native components styled by css prop",
   "dependencies": {
     "html-tags": "^3.0.0",

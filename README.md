@@ -11,41 +11,53 @@ import { Div, Button, Img, H1 } from 'css-js-components';
 import { View, Button } from 'css-js-components';
 
 ```
-Then use css={{stylesObject}} with CSS alias 
+Then use css={{stylesObject}} with some CSS alias 
 
 ```jsx
 import React from "react";
-import { Button, Text, View } from "css-js-components";
+import { Button, Text, View, _css } from "css-js-components";
 const App = () => {
-  return (
-    <View css={{
-      flex: 1,
-      jC: "center",
-      alignItems: "center",
-      bg: "black"
-    }}>
-      <Button css={{
-        fontSize: 20,
-        color: 'white',
-        bg: "darkgreen",
-        size: 80,
-        border: "1px solid black",
-        bR: 50,
-        position: "absolute",
-        right: 30,
-        bottom: 30,
-      }}
-        onPress={() => { console.log('PRESS') }}
-      >PRESS</Button>
-      <Text css={{
-        color: "white",
-        fontSize: 30,
-      }}>HELLO</Text>
-    </View>
-  );
+    return (
+        <View css={{
+            flex: 1,
+            jC: "center",
+            alignItems: "center",
+        }}>
+            <Button css={{
+                fontSize: 20,
+                color: 'white',
+                bg: "darkgreen",
+                jC: "center",
+                textAlign: "center",
+                size: 80,
+                border: "1px solid black",
+                bR: 50,
+                position: "absolute",
+                right: 50,
+                bottom: 50,
+            }}
+                onPress={() => { console.log('PRESS') }}
+            >PRESS</Button>
+            <Text css={{
+                color: "blue",
+                fontSize: 30,
+            }}>HELLO</Text>
+        </View>
+    );
+};
+
+App.navigationOptions = {
+    title: 'Home',
+    //use _css if you need alias in other style
+    headerStyle: _css({ bg: "darkgreen" }),
+    headerTintColor: 'white',
+    headerTitleStyle: {
+        fontWeight: 'bold',
+    },
 };
 
 export default App;
+
 
 ```
 ## CSS alias

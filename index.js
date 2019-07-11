@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.useValue = exports.ContextProvider = exports.Button = exports.StatusBar = exports.Modal = exports.Alert = exports.ActivityIndicator = exports.SectionList = exports.FlatList = exports.Switch = exports.Slider = exports.Picker = exports.ScrollView = exports.TextInput = exports.Image = exports.Text = exports.View = void 0;
+exports._css = exports.useValue = exports.ContextProvider = exports.Button = exports.StatusBar = exports.Modal = exports.Alert = exports.ActivityIndicator = exports.SectionList = exports.FlatList = exports.Switch = exports.Slider = exports.Picker = exports.ScrollView = exports.TextInput = exports.Image = exports.Text = exports.View = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -29,7 +29,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 var Box = (0, _styledComponents.default)('div')(function (_ref) {
     var css = _ref.css;
-    return transformCss(css);
+    return _css(css);
 });
 
 _htmlTags.default.forEach(function (tag) {
@@ -208,51 +208,21 @@ exports.ContextProvider = ContextProvider;
 var useValue = function useValue() {
     var value = (0, _react.useContext)(HooksContext);
     return value;
-}; //CSS
-
-
-exports.useValue = useValue;
-var initCss = {
-    //fonts
-    // font, lineH, letS, 
-    textAlign: "center",
-    //colors
-    // bg: "white",
-    //background
-    // bgImg, bgSize, bgPos, bgRep,
-    //flexbox
-    // aCont, jItems, 
-    alignItems: "center",
-    jC: "center" // flexWr, flexDir, flexGr, flexSh, flexBs, jSelf, aSelf,
-    //grid
-    // gridCg, gridRg, gridAf, gridAc, gridAr, gridTc, gridTr, gridTa,
-    //space
-    // m, mt, mr, mb, ml, mx, my, p, pt, pr, pb, pl, px, py,
-    //layout
-    // vAlign, size, width, height,
-    //borders
-    // bdT, bdR, bdL, bdB, bdColor, bdWidth, bdStyle, bdRadius,
-    //shadow
-    // boxSh, textSh, ...props
-
 };
 
-var transformCss = function transformCss(_ref4) {
+exports.useValue = useValue;
+
+var _css = function _css(_ref4) {
     var font = _ref4.font,
         lineH = _ref4.lineH,
         letS = _ref4.letS,
-        _ref4$textAlign = _ref4.textAlign,
-        textAlign = _ref4$textAlign === void 0 ? initCss.textAlign : _ref4$textAlign,
         bg = _ref4.bg,
         bgImg = _ref4.bgImg,
         bgSize = _ref4.bgSize,
         bgPos = _ref4.bgPos,
         bgRep = _ref4.bgRep,
-        _ref4$alignItems = _ref4.alignItems,
-        alignItems = _ref4$alignItems === void 0 ? initCss.alignItems : _ref4$alignItems,
         jI = _ref4.jI,
-        _ref4$jC = _ref4.jC,
-        jC = _ref4$jC === void 0 ? initCss.jC : _ref4$jC,
+        jC = _ref4.jC,
         fD = _ref4.fD,
         jS = _ref4.jS,
         gridCg = _ref4.gridCg,
@@ -282,14 +252,13 @@ var transformCss = function transformCss(_ref4) {
         width = _ref4.width,
         height = _ref4.height,
         bR = _ref4.bR,
-        props = _objectWithoutProperties(_ref4, ["font", "lineH", "letS", "textAlign", "bg", "bgImg", "bgSize", "bgPos", "bgRep", "alignItems", "jI", "jC", "fD", "jS", "gridCg", "gridRg", "gridAf", "gridAc", "gridAr", "gridTc", "gridTr", "gridTa", "m", "mt", "mr", "mb", "ml", "mx", "my", "p", "pt", "pr", "pb", "pl", "px", "py", "vAlign", "size", "width", "height", "bR"]);
+        props = _objectWithoutProperties(_ref4, ["font", "lineH", "letS", "bg", "bgImg", "bgSize", "bgPos", "bgRep", "jI", "jC", "fD", "jS", "gridCg", "gridRg", "gridAf", "gridAc", "gridAr", "gridTc", "gridTr", "gridTa", "m", "mt", "mr", "mb", "ml", "mx", "my", "p", "pt", "pr", "pb", "pl", "px", "py", "vAlign", "size", "width", "height", "bR"]);
 
     return _objectSpread({
         //fonts - text
         fontFamily: font,
         lineHeight: lineH,
         letterSpacing: letS,
-        textAlign: textAlign,
         //colors
         backgroundColor: bg,
         //background
@@ -298,7 +267,6 @@ var transformCss = function transformCss(_ref4) {
         backgroundPosition: bgPos,
         backgroundRepeat: bgRep,
         //flexbox
-        alignItems: alignItems,
         justifyItems: jI,
         justifyContent: jC,
         flexDirection: fD,
@@ -329,9 +297,12 @@ var transformCss = function transformCss(_ref4) {
         paddingY: py,
         //layout
         verticalAlign: vAlign,
-        width: size ? size : width,
-        height: size ? size : height,
         //border
         borderRadius: bR
-    }, props);
+    }, size ? {
+        width: size,
+        height: size
+    } : null, props);
 };
+
+exports._css = _css;
