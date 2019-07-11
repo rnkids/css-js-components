@@ -50,30 +50,23 @@ export default App;
 ```
 ## CSS alias
 ```jsx
-//fonts - text
+const alias = {
+  //fonts - text
   fontFamily: font, 
   lineHeight: lineH, 
   letterSpacing: letS, 
-  textAlign: textA,
-//colors
+//border
+  borderRadius: bR,
+//background colors
   backgroundColor: bg,
-//background
   backgroundImage: bgImg, 
   backgroundSize: bgSize, 
   backgroundPosition: bgPos, 
   backgroundRepeat: bgRep,
 //flexbox
-  alignItems: aItems, 
-  alignContent: aCont, 
-  justifyItems: jItems, 
-  justifyContent: jCont, 
-  flexWrap: flexWr, 
-  flexDirection: flexDir, 
-  flexGrow: flexGr, 
-  flexShrink: flexSh, 
-  flexBasis: flexBs, 
-  justifySelf: jSelf, 
-  alignSelf: aSelf,
+  justifyItems: jI, 
+  justifyContent: jC, 
+  justifySelf: jS, 
   //grid
   gridColumnGap: gridCg, 
   gridRowGap: gridRg, 
@@ -101,20 +94,7 @@ export default App;
   //layout
   verticalAlign: vAlign,
   width, height: size,
-  //border
-  borderTop: bdT, 
-  borderRight: bdR, 
-  borderBottom: bdB, 
-  borderLeft: bdL,
-  borderColor: bdColor, 
-  borderWidth: bdWidth, 
-  borderStyle: bdStyle, 
-  borderRadius: bdRa,
-  //shadow
-  boxShadow: boxSh,
-  textShadow: textSh,
-  //position
-  position: pos,
+}
 ```
 
 Created by Le Quy Sang

@@ -215,15 +215,15 @@ exports.useValue = useValue;
 var initCss = {
     //fonts
     // font, lineH, letS, 
-    textA: "center",
+    textAlign: "center",
     //colors
     // bg: "white",
     //background
     // bgImg, bgSize, bgPos, bgRep,
     //flexbox
-    aItems: "center",
     // aCont, jItems, 
-    jCont: "center" // flexWr, flexDir, flexGr, flexSh, flexBs, jSelf, aSelf,
+    alignItems: "center",
+    jC: "center" // flexWr, flexDir, flexGr, flexSh, flexBs, jSelf, aSelf,
     //grid
     // gridCg, gridRg, gridAf, gridAc, gridAr, gridTc, gridTr, gridTa,
     //space
@@ -241,26 +241,20 @@ var transformCss = function transformCss(_ref4) {
     var font = _ref4.font,
         lineH = _ref4.lineH,
         letS = _ref4.letS,
-        _ref4$textA = _ref4.textA,
-        textA = _ref4$textA === void 0 ? initCss.textA : _ref4$textA,
+        _ref4$textAlign = _ref4.textAlign,
+        textAlign = _ref4$textAlign === void 0 ? initCss.textAlign : _ref4$textAlign,
         bg = _ref4.bg,
         bgImg = _ref4.bgImg,
         bgSize = _ref4.bgSize,
         bgPos = _ref4.bgPos,
         bgRep = _ref4.bgRep,
-        _ref4$aItems = _ref4.aItems,
-        aItems = _ref4$aItems === void 0 ? initCss.aItems : _ref4$aItems,
-        aCont = _ref4.aCont,
-        jItems = _ref4.jItems,
-        _ref4$jCont = _ref4.jCont,
-        jCont = _ref4$jCont === void 0 ? initCss.jCont : _ref4$jCont,
-        flexWr = _ref4.flexWr,
-        flexDir = _ref4.flexDir,
-        flexGr = _ref4.flexGr,
-        flexSh = _ref4.flexSh,
-        flexBs = _ref4.flexBs,
-        jSelf = _ref4.jSelf,
-        aSelf = _ref4.aSelf,
+        _ref4$alignItems = _ref4.alignItems,
+        alignItems = _ref4$alignItems === void 0 ? initCss.alignItems : _ref4$alignItems,
+        jI = _ref4.jI,
+        _ref4$jC = _ref4.jC,
+        jC = _ref4$jC === void 0 ? initCss.jC : _ref4$jC,
+        fD = _ref4.fD,
+        jS = _ref4.jS,
         gridCg = _ref4.gridCg,
         gridRg = _ref4.gridRg,
         gridAf = _ref4.gridAf,
@@ -287,25 +281,15 @@ var transformCss = function transformCss(_ref4) {
         size = _ref4.size,
         width = _ref4.width,
         height = _ref4.height,
-        bdT = _ref4.bdT,
-        bdR = _ref4.bdR,
-        bdL = _ref4.bdL,
-        bdB = _ref4.bdB,
-        bdColor = _ref4.bdColor,
-        bdWidth = _ref4.bdWidth,
-        bdStyle = _ref4.bdStyle,
-        bdRa = _ref4.bdRa,
-        boxSh = _ref4.boxSh,
-        textSh = _ref4.textSh,
-        pos = _ref4.pos,
-        props = _objectWithoutProperties(_ref4, ["font", "lineH", "letS", "textA", "bg", "bgImg", "bgSize", "bgPos", "bgRep", "aItems", "aCont", "jItems", "jCont", "flexWr", "flexDir", "flexGr", "flexSh", "flexBs", "jSelf", "aSelf", "gridCg", "gridRg", "gridAf", "gridAc", "gridAr", "gridTc", "gridTr", "gridTa", "m", "mt", "mr", "mb", "ml", "mx", "my", "p", "pt", "pr", "pb", "pl", "px", "py", "vAlign", "size", "width", "height", "bdT", "bdR", "bdL", "bdB", "bdColor", "bdWidth", "bdStyle", "bdRa", "boxSh", "textSh", "pos"]);
+        bR = _ref4.bR,
+        props = _objectWithoutProperties(_ref4, ["font", "lineH", "letS", "textAlign", "bg", "bgImg", "bgSize", "bgPos", "bgRep", "alignItems", "jI", "jC", "fD", "jS", "gridCg", "gridRg", "gridAf", "gridAc", "gridAr", "gridTc", "gridTr", "gridTa", "m", "mt", "mr", "mb", "ml", "mx", "my", "p", "pt", "pr", "pb", "pl", "px", "py", "vAlign", "size", "width", "height", "bR"]);
 
     return _objectSpread({
         //fonts - text
         fontFamily: font,
         lineHeight: lineH,
         letterSpacing: letS,
-        textAlign: textA,
+        textAlign: textAlign,
         //colors
         backgroundColor: bg,
         //background
@@ -314,17 +298,11 @@ var transformCss = function transformCss(_ref4) {
         backgroundPosition: bgPos,
         backgroundRepeat: bgRep,
         //flexbox
-        alignItems: aItems,
-        alignContent: aCont,
-        justifyItems: jItems,
-        justifyContent: jCont,
-        flexWrap: flexWr,
-        flexDirection: flexDir,
-        flexGrow: flexGr,
-        flexShrink: flexSh,
-        flexBasis: flexBs,
-        justifySelf: jSelf,
-        alignSelf: aSelf,
+        alignItems: alignItems,
+        justifyItems: jI,
+        justifyContent: jC,
+        flexDirection: fD,
+        justifySelf: jS,
         //grid
         gridColumnGap: gridCg,
         gridRowGap: gridRg,
@@ -354,18 +332,6 @@ var transformCss = function transformCss(_ref4) {
         width: size ? size : width,
         height: size ? size : height,
         //border
-        borderTop: bdT,
-        borderRight: bdR,
-        borderBottom: bdB,
-        borderLeft: bdL,
-        borderColor: bdColor,
-        borderWidth: bdWidth,
-        borderStyle: bdStyle,
-        borderRadius: bdRa,
-        //shadow
-        boxShadow: boxSh,
-        textShadow: textSh,
-        //position
-        position: pos
+        borderRadius: bR
     }, props);
 };

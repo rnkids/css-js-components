@@ -49,15 +49,15 @@ export const useValue = () => {
 const initCss = {
     //fonts
     // font, lineH, letS, 
-    textA: "center",
+    textAlign: "center",
     //colors
     // bg: "white",
     //background
     // bgImg, bgSize, bgPos, bgRep,
     //flexbox
-    aItems: "center",
     // aCont, jItems, 
-    jCont: "center",
+    alignItems: "center",
+    jC: "center",
     // flexWr, flexDir, flexGr, flexSh, flexBs, jSelf, aSelf,
     //grid
     // gridCg, gridRg, gridAf, gridAc, gridAr, gridTc, gridTr, gridTa,
@@ -73,13 +73,13 @@ const initCss = {
 
 const transformCss = ({
     //fonts
-    font, lineH, letS, textA = initCss.textA,
+    font, lineH, letS, textAlign = initCss.textAlign,
     //colors
     bg,
     //background
     bgImg, bgSize, bgPos, bgRep,
     //flexbox
-    aItems = initCss.aItems, aCont, jItems, jCont = initCss.jCont, flexWr, flexDir, flexGr, flexSh, flexBs, jSelf, aSelf,
+    alignItems = initCss.alignItems, jI, jC = initCss.jC, fD, jS,
     //grid
     gridCg, gridRg, gridAf, gridAc, gridAr, gridTc, gridTr, gridTa,
     //space
@@ -87,21 +87,22 @@ const transformCss = ({
     //layout
     vAlign, size, width, height,
     //borders
-    bdT, bdR, bdL, bdB, bdColor, bdWidth, bdStyle, bdRa,
-    //shadow
-    boxSh, textSh,
+    bR,
     //position
-    pos,
     ...props
 }) => ({
     //fonts - text
-    fontFamily: font, lineHeight: lineH, letterSpacing: letS, textAlign: textA,
+    fontFamily: font, lineHeight: lineH, letterSpacing: letS, textAlign: textAlign,
     //colors
     backgroundColor: bg,
     //background
     backgroundImage: bgImg, backgroundSize: bgSize, backgroundPosition: bgPos, backgroundRepeat: bgRep,
     //flexbox
-    alignItems: aItems, alignContent: aCont, justifyItems: jItems, justifyContent: jCont, flexWrap: flexWr, flexDirection: flexDir, flexGrow: flexGr, flexShrink: flexSh, flexBasis: flexBs, justifySelf: jSelf, alignSelf: aSelf,
+    alignItems: alignItems,
+    justifyItems: jI,
+    justifyContent: jC,
+    flexDirection: fD,
+    justifySelf: jS,
     //grid
     gridColumnGap: gridCg, gridRowGap: gridRg, gridAutoFlow: gridAf, gridAutoColumns: gridAc, gridAutoRows: gridAr, gridTemplateColumns: gridTc, gridTemplateRows: gridTr, gridTemplateAreas: gridTa,
     //spaces
@@ -113,12 +114,7 @@ const transformCss = ({
     width: size ? size : width,
     height: size ? size : height,
     //border
-    borderTop: bdT, borderRight: bdR, borderBottom: bdB, borderLeft: bdL,
-    borderColor: bdColor, borderWidth: bdWidth, borderStyle: bdStyle, borderRadius: bdRa,
-    //shadow
-    boxShadow: boxSh,
-    textShadow: textSh,
+    borderRadius: bR,
     //position
-    position: pos,
     ...props
 })
