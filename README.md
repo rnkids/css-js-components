@@ -16,7 +16,10 @@ Then use css={{stylesObject}} with some CSS alias
 ```jsx
 import React from "react";
 import { Button, Text, View, _css } from "css-js-components";
+import * as N from 'react-native'
+
 const App = () => {
+
     return (
         <View css={{
             flex: 1,
@@ -47,17 +50,20 @@ const App = () => {
 };
 
 App.navigationOptions = {
-    title: 'Home',
-    //use _css if you need alias in other style
-    headerStyle: _css({ bg: "darkgreen" }),
-    headerTintColor: 'white',
-    headerTitleStyle: {
-        fontWeight: 'bold',
-    },
+    headerTitle: (
+        <N.Image
+            source={{ uri: "http://assets.stickpng.com/thumbs/580b57fbd9996e24bc43c038.png" }}
+            //use in inline _css
+            style={_css({
+                width: 30,
+                height: 30,
+            })}
+        />
+    )
 };
 
-export default App;
 
+export default App;
 
 ```
 ## CSS alias
@@ -66,9 +72,9 @@ The right key alias the left css
 ```jsx
 
   //fonts - text
-  fontFamily: font, 
-  lineHeight: lineH, 
-  letterSpacing: letS, 
+  fontFamily: fF, 
+  lineHeight: lH, 
+  letterSpacing: lS, 
 //border
   borderRadius: bR,
 //background colors
@@ -82,14 +88,14 @@ The right key alias the left css
   justifyContent: jC, 
   justifySelf: jS, 
   //grid
-  gridColumnGap: gridCg, 
-  gridRowGap: gridRg, 
-  gridAutoFlow: gridAf, 
-  gridAutoColumns: gridAc, 
-  gridAutoRows: gridAr, 
-  gridTemplateColumns: gridTc, 
-  gridTemplateRows: gridTr, 
-  gridTemplateAreas: gridTa,
+  gridColumnGap: gCg, 
+  gridRowGap: gRg, 
+  gridAutoFlow: gAf, 
+  gridAutoColumns: gAc, 
+  gridAutoRows: gAr, 
+  gridTemplateColumns: gTc, 
+  gridTemplateRows: gTr, 
+  gridTemplateAreas: gTa,
   //spaces
   margin: m, 
   marginTop: mt, 
@@ -106,7 +112,7 @@ The right key alias the left css
   paddingX: px, 
   paddingY: py,
   //layout
-  verticalAlign: vAlign,
+  verticalAlign: vA,
   width, height: size,
 
 ```

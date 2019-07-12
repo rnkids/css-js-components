@@ -47,7 +47,7 @@ export const useValue = () => {
 
 export const _css = ({
     //fonts
-    font, lineH, letS,
+    fF, lH, lS,
     //colors
     bg,
     //background
@@ -55,38 +55,45 @@ export const _css = ({
     //flexbox
     jI, jC, fD, jS,
     //grid
-    gridCg, gridRg, gridAf, gridAc, gridAr, gridTc, gridTr, gridTa,
+    gCg, gRg, gAf, gAc, gAr, gTc, gTr, gTa,
     //space
     m, mt, mr, mb, ml, mx, my, p, pt, pr, pb, pl, px, py,
     //layout
-    vAlign, size, width, height,
+    vA, size,
     //borders
     bR,
     //position
     ...props
-}) => ({
-    //fonts - text
-    fontFamily: font, lineHeight: lineH, letterSpacing: letS,
-    //colors
-    backgroundColor: bg,
-    //background
-    backgroundImage: bgImg, backgroundSize: bgSize, backgroundPosition: bgPos, backgroundRepeat: bgRep,
-    //flexbox
-    justifyItems: jI,
-    justifyContent: jC,
-    flexDirection: fD,
-    justifySelf: jS,
-    //grid
-    gridColumnGap: gridCg, gridRowGap: gridRg, gridAutoFlow: gridAf, gridAutoColumns: gridAc, gridAutoRows: gridAr, gridTemplateColumns: gridTc, gridTemplateRows: gridTr, gridTemplateAreas: gridTa,
-    //spaces
-    margin: m, marginTop: mt, marginRight: mr, marginBottom: mb, marginLeft: ml,
-    marginX: mx, marginY: my,
-    padding: p, paddingTop: pt, paddingRight: pr, paddingBottom: pb, paddingLeft: pl, paddingX: px, paddingY: py,
-    //layout
-    verticalAlign: vAlign,
-    //border
-    borderRadius: bR,
-    ...(size ? { width: size, height: size } : null),
-    //position
-    ...props
-})
+}) => {
+
+    const obj = {
+        //fonts - text
+        fontFamily: fF, lineHeight: lH, letterSpacing: lS,
+        //colors
+        backgroundColor: bg,
+        //background
+        backgroundImage: bgImg, backgroundSize: bgSize, backgroundPosition: bgPos, backgroundRepeat: bgRep,
+        //flexbox
+        justifyItems: jI,
+        justifyContent: jC,
+        flexDirection: fD,
+        justifySelf: jS,
+        //grid
+        gridColumnGap: gCg, gridRowGap: gRg, gridAutoFlow: gAf, gridAutoColumns: gAc, gridAutoRows: gAr, gridTemplateColumns: gTc, gridTemplateRows: gTr, gridTemplateAreas: gTa,
+        //spaces
+        margin: m, marginTop: mt, marginRight: mr, marginBottom: mb, marginLeft: ml,
+        marginX: mx, marginY: my,
+        padding: p, paddingTop: pt, paddingRight: pr, paddingBottom: pb, paddingLeft: pl, paddingX: px, paddingY: py,
+        //layout
+        verticalAlign: vA,
+        //border
+        borderRadius: bR,
+        ...(size ? { width: size, height: size } : null),
+        //position
+        ...props
+    }
+
+    Object.keys(obj).forEach(key => (obj[key] === undefined || !obj[key]) && delete obj[key]);
+
+    return obj;
+}

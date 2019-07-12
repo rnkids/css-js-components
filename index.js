@@ -213,9 +213,9 @@ var useValue = function useValue() {
 exports.useValue = useValue;
 
 var _css = function _css(_ref4) {
-    var font = _ref4.font,
-        lineH = _ref4.lineH,
-        letS = _ref4.letS,
+    var fF = _ref4.fF,
+        lH = _ref4.lH,
+        lS = _ref4.lS,
         bg = _ref4.bg,
         bgImg = _ref4.bgImg,
         bgSize = _ref4.bgSize,
@@ -225,14 +225,14 @@ var _css = function _css(_ref4) {
         jC = _ref4.jC,
         fD = _ref4.fD,
         jS = _ref4.jS,
-        gridCg = _ref4.gridCg,
-        gridRg = _ref4.gridRg,
-        gridAf = _ref4.gridAf,
-        gridAc = _ref4.gridAc,
-        gridAr = _ref4.gridAr,
-        gridTc = _ref4.gridTc,
-        gridTr = _ref4.gridTr,
-        gridTa = _ref4.gridTa,
+        gCg = _ref4.gCg,
+        gRg = _ref4.gRg,
+        gAf = _ref4.gAf,
+        gAc = _ref4.gAc,
+        gAr = _ref4.gAr,
+        gTc = _ref4.gTc,
+        gTr = _ref4.gTr,
+        gTa = _ref4.gTa,
         m = _ref4.m,
         mt = _ref4.mt,
         mr = _ref4.mr,
@@ -247,18 +247,16 @@ var _css = function _css(_ref4) {
         pl = _ref4.pl,
         px = _ref4.px,
         py = _ref4.py,
-        vAlign = _ref4.vAlign,
+        vA = _ref4.vA,
         size = _ref4.size,
-        width = _ref4.width,
-        height = _ref4.height,
         bR = _ref4.bR,
-        props = _objectWithoutProperties(_ref4, ["font", "lineH", "letS", "bg", "bgImg", "bgSize", "bgPos", "bgRep", "jI", "jC", "fD", "jS", "gridCg", "gridRg", "gridAf", "gridAc", "gridAr", "gridTc", "gridTr", "gridTa", "m", "mt", "mr", "mb", "ml", "mx", "my", "p", "pt", "pr", "pb", "pl", "px", "py", "vAlign", "size", "width", "height", "bR"]);
+        props = _objectWithoutProperties(_ref4, ["fF", "lH", "lS", "bg", "bgImg", "bgSize", "bgPos", "bgRep", "jI", "jC", "fD", "jS", "gCg", "gRg", "gAf", "gAc", "gAr", "gTc", "gTr", "gTa", "m", "mt", "mr", "mb", "ml", "mx", "my", "p", "pt", "pr", "pb", "pl", "px", "py", "vA", "size", "bR"]);
 
-    return _objectSpread({
+    var obj = _objectSpread({
         //fonts - text
-        fontFamily: font,
-        lineHeight: lineH,
-        letterSpacing: letS,
+        fontFamily: fF,
+        lineHeight: lH,
+        letterSpacing: lS,
         //colors
         backgroundColor: bg,
         //background
@@ -272,14 +270,14 @@ var _css = function _css(_ref4) {
         flexDirection: fD,
         justifySelf: jS,
         //grid
-        gridColumnGap: gridCg,
-        gridRowGap: gridRg,
-        gridAutoFlow: gridAf,
-        gridAutoColumns: gridAc,
-        gridAutoRows: gridAr,
-        gridTemplateColumns: gridTc,
-        gridTemplateRows: gridTr,
-        gridTemplateAreas: gridTa,
+        gridColumnGap: gCg,
+        gridRowGap: gRg,
+        gridAutoFlow: gAf,
+        gridAutoColumns: gAc,
+        gridAutoRows: gAr,
+        gridTemplateColumns: gTc,
+        gridTemplateRows: gTr,
+        gridTemplateAreas: gTa,
         //spaces
         margin: m,
         marginTop: mt,
@@ -296,13 +294,18 @@ var _css = function _css(_ref4) {
         paddingX: px,
         paddingY: py,
         //layout
-        verticalAlign: vAlign,
+        verticalAlign: vA,
         //border
         borderRadius: bR
     }, size ? {
         width: size,
         height: size
     } : null, props);
+
+    Object.keys(obj).forEach(function (key) {
+        return (obj[key] === undefined || !obj[key]) && delete obj[key];
+    });
+    return obj;
 };
 
 exports._css = _css;
