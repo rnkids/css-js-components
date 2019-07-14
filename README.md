@@ -15,7 +15,7 @@ Then use css={{stylesObject}}
 
 ```jsx
 import React from "react";
-import { Button, Text, View, _css } from "css-js-components";
+import { Button, Text, View } from "css-js-components";
 import * as N from 'react-native'
 
 const App = () => {
