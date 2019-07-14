@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports._css = exports.useValue = exports.ContextProvider = exports.Button = exports.StatusBar = exports.Modal = exports.Alert = exports.ActivityIndicator = exports.SectionList = exports.FlatList = exports.Switch = exports.Slider = exports.Picker = exports.ScrollView = exports.TextInput = exports.Image = exports.Text = exports.View = void 0;
+exports.useValue = exports.ContextProvider = exports.Button = exports.StatusBar = exports.Modal = exports.Alert = exports.ActivityIndicator = exports.SectionList = exports.FlatList = exports.Switch = exports.Slider = exports.Picker = exports.ScrollView = exports.TextInput = exports.Image = exports.Text = exports.View = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -29,7 +29,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 var Box = (0, _styledComponents.default)('div')(function (_ref) {
     var css = _ref.css;
-    return _css(css);
+    return css;
 });
 
 _htmlTags.default.forEach(function (tag) {
@@ -211,101 +211,3 @@ var useValue = function useValue() {
 };
 
 exports.useValue = useValue;
-
-var _css = function _css(_ref4) {
-    var fF = _ref4.fF,
-        lH = _ref4.lH,
-        lS = _ref4.lS,
-        bg = _ref4.bg,
-        bgImg = _ref4.bgImg,
-        bgSize = _ref4.bgSize,
-        bgPos = _ref4.bgPos,
-        bgRep = _ref4.bgRep,
-        jI = _ref4.jI,
-        jC = _ref4.jC,
-        fD = _ref4.fD,
-        jS = _ref4.jS,
-        gCg = _ref4.gCg,
-        gRg = _ref4.gRg,
-        gAf = _ref4.gAf,
-        gAc = _ref4.gAc,
-        gAr = _ref4.gAr,
-        gTc = _ref4.gTc,
-        gTr = _ref4.gTr,
-        gTa = _ref4.gTa,
-        m = _ref4.m,
-        mt = _ref4.mt,
-        mr = _ref4.mr,
-        mb = _ref4.mb,
-        ml = _ref4.ml,
-        mx = _ref4.mx,
-        my = _ref4.my,
-        p = _ref4.p,
-        pt = _ref4.pt,
-        pr = _ref4.pr,
-        pb = _ref4.pb,
-        pl = _ref4.pl,
-        px = _ref4.px,
-        py = _ref4.py,
-        vA = _ref4.vA,
-        size = _ref4.size,
-        bR = _ref4.bR,
-        props = _objectWithoutProperties(_ref4, ["fF", "lH", "lS", "bg", "bgImg", "bgSize", "bgPos", "bgRep", "jI", "jC", "fD", "jS", "gCg", "gRg", "gAf", "gAc", "gAr", "gTc", "gTr", "gTa", "m", "mt", "mr", "mb", "ml", "mx", "my", "p", "pt", "pr", "pb", "pl", "px", "py", "vA", "size", "bR"]);
-
-    var obj = _objectSpread({
-        //fonts - text
-        fontFamily: fF,
-        lineHeight: lH,
-        letterSpacing: lS,
-        //colors
-        backgroundColor: bg,
-        //background
-        backgroundImage: bgImg,
-        backgroundSize: bgSize,
-        backgroundPosition: bgPos,
-        backgroundRepeat: bgRep,
-        //flexbox
-        justifyItems: jI,
-        justifyContent: jC,
-        flexDirection: fD,
-        justifySelf: jS,
-        //grid
-        gridColumnGap: gCg,
-        gridRowGap: gRg,
-        gridAutoFlow: gAf,
-        gridAutoColumns: gAc,
-        gridAutoRows: gAr,
-        gridTemplateColumns: gTc,
-        gridTemplateRows: gTr,
-        gridTemplateAreas: gTa,
-        //spaces
-        margin: m,
-        marginTop: mt,
-        marginRight: mr,
-        marginBottom: mb,
-        marginLeft: ml,
-        marginX: mx,
-        marginY: my,
-        padding: p,
-        paddingTop: pt,
-        paddingRight: pr,
-        paddingBottom: pb,
-        paddingLeft: pl,
-        paddingX: px,
-        paddingY: py,
-        //layout
-        verticalAlign: vA,
-        //border
-        borderRadius: bR
-    }, size ? {
-        width: size,
-        height: size
-    } : null, props);
-
-    Object.keys(obj).forEach(function (key) {
-        return (obj[key] === undefined || !obj[key]) && delete obj[key];
-    });
-    return obj;
-};
-
-exports._css = _css;

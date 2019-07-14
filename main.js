@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import tags from 'html-tags'
 import * as N from 'react-native'
 
-const Box = styled('div')(({ css }) => _css(css));
+const Box = styled('div')(({ css }) => css);
 
 tags.forEach(tag => {
     module.exports[tag.charAt(0).toUpperCase() + tag.slice(1)] = props => <Box as={tag} {...props} />
@@ -44,56 +44,3 @@ export const useValue = () => {
     const value = useContext(HooksContext);
     return value;
 };
-
-export const _css = ({
-    //fonts
-    fF, lH, lS,
-    //colors
-    bg,
-    //background
-    bgImg, bgSize, bgPos, bgRep,
-    //flexbox
-    jI, jC, fD, jS,
-    //grid
-    gCg, gRg, gAf, gAc, gAr, gTc, gTr, gTa,
-    //space
-    m, mt, mr, mb, ml, mx, my, p, pt, pr, pb, pl, px, py,
-    //layout
-    vA, size,
-    //borders
-    bR,
-    //position
-    ...props
-}) => {
-
-    const obj = {
-        //fonts - text
-        fontFamily: fF, lineHeight: lH, letterSpacing: lS,
-        //colors
-        backgroundColor: bg,
-        //background
-        backgroundImage: bgImg, backgroundSize: bgSize, backgroundPosition: bgPos, backgroundRepeat: bgRep,
-        //flexbox
-        justifyItems: jI,
-        justifyContent: jC,
-        flexDirection: fD,
-        justifySelf: jS,
-        //grid
-        gridColumnGap: gCg, gridRowGap: gRg, gridAutoFlow: gAf, gridAutoColumns: gAc, gridAutoRows: gAr, gridTemplateColumns: gTc, gridTemplateRows: gTr, gridTemplateAreas: gTa,
-        //spaces
-        margin: m, marginTop: mt, marginRight: mr, marginBottom: mb, marginLeft: ml,
-        marginX: mx, marginY: my,
-        padding: p, paddingTop: pt, paddingRight: pr, paddingBottom: pb, paddingLeft: pl, paddingX: px, paddingY: py,
-        //layout
-        verticalAlign: vA,
-        //border
-        borderRadius: bR,
-        ...(size ? { width: size, height: size } : null),
-        //position
-        ...props
-    }
-
-    Object.keys(obj).forEach(key => (obj[key] === undefined || !obj[key]) && delete obj[key]);
-
-    return obj;
-}
